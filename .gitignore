@@ -54,3 +54,4 @@ dkms.conf
 # Extra shitty shit
 input.txt
 output.txt
+venv/

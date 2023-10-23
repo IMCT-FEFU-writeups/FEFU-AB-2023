@@ -24,7 +24,7 @@ int main() {
     FILE *output = fopen("output.txt", "w");
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
-            fprintf(output,"%d ", matrix[i][j]);
+            fprintf(output, "%d ", matrix[i][j]);
         }
         fprintf(output, "\n");
     }
