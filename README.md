@@ -3,7 +3,7 @@ Writeups for [Algorithmization Basics contest](https://imcs.dvfu.ru/cats/problem
 ## Contribution
 Urge you to commit your solves, but plesae follow these rules:
 - Do not repeat ideas (But you can rewrite it to other language)
-- Сode must be pretty (or just try pls) f.e. follow [pep8](https://peps.python.org/pep-0008/) or this [c codestyle](https://github.com/MaJerle/c-code-style)
+- Сode must be pretty (or just try pls) f.e. follow [pep8](https://peps.python.org/pep-0008/) or this [c codestyle](https://google.github.io/styleguide/cppguide.html)
 - Comments and commet messages should be in english if possible
 - Name solves by your nickname, it will help with avoiding merge coflicts
 ## How to contibute easily
@@ -18,7 +18,7 @@ To make youe contributing easy follow this esay steps:
 ## Контрибьютинг
 Настоятельно прошу всех делиться своими решениями, но, пожалуйста, следуйте нескольким правилам:
 - Идеи решений не должны повторяться (Но те же идеи можно переписывать на другие языки)
-- Ваш код должен быть опрятным. Т.е. следовать кодстайлу языка, на котором вы пишете ([python](https://peps.python.org/pep-0008/), [c](https://github.com/MaJerle/c-code-style))
+- Ваш код должен быть опрятным. Т.е. следовать кодстайлу языка, на котором вы пишете ([python](https://peps.python.org/pep-0008/), [c](https://google.github.io/styleguide/cppguide.html))
 - Комментарии в коде писать на английском, если вы знаете язык
 - Называйте файл с решением своим ником, это позволит избегать мердж конфликтов
 ## Как легко оправлять свои решения:
