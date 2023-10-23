@@ -19,5 +19,5 @@ int main() {
       fibi2 = fibi3;
     }
   }
-  return 0;  
+  return 0;
 }

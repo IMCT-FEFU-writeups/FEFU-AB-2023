@@ -19,6 +19,8 @@ int main() {
       fprintf(fout, "%lld", max(a, max(b, max(c, d))));
     else
       fprintf(fout, "%lld", min(a, min(b, min(c, d))));
-  } else
+  } else {
     fprintf(fout, "%lld", if_even(a) + if_even(b) + if_even(c) + if_even(d));
-  
+  }
+  return 0;
+}

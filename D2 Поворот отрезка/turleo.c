@@ -9,13 +9,14 @@ int main() {
     FILE* fin = fopen("input.txt", "r");
     FILE* fout = fopen("output.txt", "w+");
     double xa, ya, xb, yb, xo, yo, b;
-    fscanf(fin, "%lf %lf %lf %lf %lf %lf %lf", &xa, &ya, &xb, &yb, &xo, &yo, &b);
+    fscanf(fin, "%lf %lf %lf %lf %lf %lf %lf",
+            &xa, &ya, &xb, &yb, &xo, &yo, &b);
 
     /*
      * first of all, we need to convert our angle to radians 
      * because trigonometric functions in c requires radians
      */
-    b = (b * M_PI) / 180; 
+    b = (b * M_PI) / 180;
 
     /*
      * after that we need to move our points in the way 

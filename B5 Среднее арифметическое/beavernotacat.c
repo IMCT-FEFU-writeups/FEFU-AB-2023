@@ -11,7 +11,7 @@ int main() {
   if (len <= 0) {
     fprintf(outFile, "0");
   }
-  
+
   for (int i = 0; i < len; i++) {
     fscanf(inFile, "%lf", &temp);
     answ += temp;
