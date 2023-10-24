@@ -10,14 +10,14 @@ int main() {
 
     fscanf(input, "%d", &n);
 
-    int a[n];
+    int а[n];
 
-    for (int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++) {
         fscanf(input, "%d", &a[i]);
     }
-    for (int i = 0; i < n; i++){
-        fscanf(input, " %c", &c);    /*it wont work without this whitespace before %c, idk why */
-        if (c == '+'){
+    for (int i = 0; i < n; i++) {
+        fscanf(input, " %c", &c);
+        if (c == '+') {
             sum += a[i];
         }
     }

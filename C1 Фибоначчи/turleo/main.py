@@ -19,10 +19,10 @@ for i in range(95):
         return 0;
     }
     fprintf(fout,  \"""" + str(d[i])+ """ \");
-          """)
+""")
     prev_1 = prev
     prev = now
 print("""
     return 0;
 }
-      """)
+""")
