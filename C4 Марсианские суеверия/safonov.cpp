@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main(){
+int main() {
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
     long long int n, m, k, answer = 0, cel, ost, k1;
@@ -16,15 +16,15 @@ int main(){
     ost = k % m;
     if (n * m < k || k1 == 4 || k1 == 13)
         answer = -1;
-    else{
-        if (cel >= 13){
+    else {
+        if (cel >= 13) {
             if (ost != 0)
                 answer = cel + 3;
-            else 
+            else
                 answer = cel + 2;
         }
-        if (cel < 13 && cel >= 4){
-            if (ost != 0){
+        if (cel < 13 && cel >= 4) {
+            if (ost != 0) {
                 if (cel + 1 != 13)
                     answer = cel + 2;
                 if (cel + 1 == 13)
@@ -33,8 +33,8 @@ int main(){
             if (ost == 0)
                 answer = cel + 1;
         }
-        if (cel < 4){
-            if (ost != 0){
+        if (cel < 4) {
+            if (ost != 0) {
                 if (cel + 1 != 4)
                     answer = cel + 1;
                 if (cel + 1 == 4)
@@ -44,12 +44,6 @@ int main(){
                 answer = cel;
         }
     }
-    
-    
     cout << answer;
-    
-    
-    
-    
     return 0;
-} 
+}

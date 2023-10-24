@@ -8,13 +8,12 @@ int main() {
     fscanf(input, "%d", &n);
 
     long long int a[n];
-
-    for (int i = 0; i < n; i++) {    /* Fibonacci does not even need a recursive function */
+    // Fibonacci does not even need a recursive function
+    for (int i = 0; i < n; i++) {
         if (i == 0 || i == 1)        /* b: Uhm... yes, and? */
             a[i] = i;
         else
             a[i] = a[i-1] + a[i-2];
-        
         fprintf(output, "%lld ", a[i]);
     }
     return 0;

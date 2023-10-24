@@ -14,15 +14,15 @@ int main() {
     }
     if (abs(x1 - x2) == abs(y2 - y1)) {
         if (abs(x2 - x1) > 1 && abs(y2 - y1) > 1) {
-            if (x2 > x1 and y2 > y1) {
+            if (x2 > x1 && y2 > y1) {
                 cout << x1 + 1 << ' ' << y1 + 1;
                 return 0;
             }
-            if (x2 > x1 and y2 < y1) {
+            if (x2 > x1 && y2 < y1) {
                 cout << x1 + 1 << ' ' << y1 - 1;
                 return 0;
             }
-            if (x2 < x1 and y2 > y1) {
+            if (x2 < x1 && y2 > y1) {
                 cout << x2 + 1 << ' ' << y2 - 1;
                 return 0;
             } else {

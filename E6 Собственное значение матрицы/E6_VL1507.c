@@ -18,6 +18,5 @@ int main() {
     } else {
         printf("YES\n%.4lf", numerator / denominator);
     }
-    
     return 0;
 }

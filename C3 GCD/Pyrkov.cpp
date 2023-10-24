@@ -3,7 +3,7 @@
 using namespace std;
 
 int NOD(int a, int b) {
-    while (a != 0 and b != 0) {
+    while (a != 0 && b != 0) {
         if (a > b) {
             a = a % b;
         } else {
