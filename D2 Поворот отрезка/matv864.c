@@ -20,68 +20,57 @@
 #include <math.h>
 #define ll long long int
 #define ld long double
-//sorry za moy bad angliyskiy)))
+// sorry za moy bad angliyskiy)))
 // radian * 180 / M_PI = degree
 
-ld get_corner(ld dist, ld x, ld y){
+ld get_corner(ld dist, ld x, ld y) {
     if (x >= 0)
         return (asin(y / dist));
     else
         return (M_PI - (asin(y / dist)));
 }
 
-ld get_dist(ld x, ld y){
+ld get_dist(ld x, ld y) {
     return sqrt(x * x + y * y);
 }
 
 
-int main(){
+int main() {
     FILE *inp;
     FILE *out;
     inp = fopen("input.txt", "r");
     out = fopen("output.txt", "w");
-    ld x_a, y_a, x_b, y_b, x_o, y_o, rotate_degree, rotate_radian;    
+    ld x_a, y_a, x_b, y_b, x_o, y_o, rotate_degree, rotate_radian;
     ld pr_a, sin_alph_a, alph_a, pr_b, sin_alph_b, alph_b;
-    fscanf(inp, "%Lf %Lf %Lf %Lf %Lf %Lf %Lf", &x_a, &y_a, &x_b, &y_b, &x_o, &y_o, &rotate_degree);
+    fscanf(inp, "%Lf %Lf %Lf %Lf", &x_a, &y_a, &x_b, &y_b);
+    fscanf(inp, "%Lf %Lf %Lf", &x_o, &y_o, &rotate_degree);
     rotate_radian = rotate_degree * M_PI / 180;
-    
     // we make new system around new O
     x_a -= x_o;
     y_a -= y_o;
     x_b -= x_o;
     y_b -= y_o;
-    
     // find polar coordinates (distance (pr_), degree (alph_))
     pr_a = get_dist(x_a, y_a);
-    if (pr_a != 0){
+    if (pr_a != 0) {
         alph_a = get_corner(pr_a, x_a, y_a);
-        
-        //rotate
+        // rotate
         alph_a += rotate_radian;
-        
         // return to decartoviy coordinates
         x_a = pr_a * cos(alph_a);
         y_a = pr_a * sin(alph_a);
     }
-    
     // repeat
-    
-    
     // find polar coordinates (distance, degree)
     pr_b = get_dist(x_b, y_b);
-    if (pr_b != 0){
+    if (pr_b != 0) {
         alph_b = get_corner(pr_b, x_b, y_b);
-        
-        //rotate
+        // rotate
         alph_b += rotate_radian;
-        
         // return to decartoviy coordinates
         x_b = pr_b * cos(alph_b);
         y_b = pr_b * sin(alph_b);
     }
-    
-    
-    
     // we return to old system O
     x_a += x_o;
     y_a += y_o;

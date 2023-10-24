@@ -8,19 +8,17 @@
 #include <stdio.h>
 #define ull unsigned long long int
 
-int main(){
+int main() {
     ull n;
     scanf("%llu", &n);
-    while (n>0){
+    while (n > 0) {
         // printf("%llu\n", n&0xFFFF);
-        if ((n&0xFFFF) == 0xBABE){
+        if ((n&0xFFFF) == 0xBABE) {
             printf("YES");
             return 0;
         }
         n = n >> 4;
     }
-    
-    
     printf("NO");
     return 0;
 }

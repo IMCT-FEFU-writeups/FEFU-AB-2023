@@ -23,11 +23,10 @@ int main() {
     int a1, b1, a2, b2;
 
     fscanf(inp, "%d %d %d %d", &a1, &b1, &a2, &b2);
-    for (int i = 0;i < 8;i++) {
+    for (int i = 0; i < 8; i++) {
         if (i == a1 || i == a2)
             continue;
-        
-        for (int j = 0;j < 8;j++){
+        for (int j = 0; j < 8; j++) {
             if (slon(i, j, a1, b1) && slon(i, j, a2, b2)) {
                 if (!hit_both(i, j, a1, b1, a2, b2)) {
                     fprintf(out, "%d %d", i, j);

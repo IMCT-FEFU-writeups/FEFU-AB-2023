@@ -14,14 +14,14 @@
  */
 
 #define ll long long int
-ll gcd(ll a, ll b){
-    if (a == 0){
+ll gcd(ll a, ll b) {
+    if (a == 0) {
         return b;
     }
     return gcd(b % a, a);
 }
 
-int main(){
+int main() {
     ll a, b, c;
     scanf("%lld %lld %lld", &a, &b, &c);
     printf("%lld %lld %lld", gcd(a, b), gcd(a, c), gcd(b, c));
