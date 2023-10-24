@@ -12,7 +12,7 @@ int main() {
     if (a == 0) { printf("%d", 0); return 0; }  // Zero
 
     if (a >> 23 == 0 || a >> 23 == 256) { printf("%d", -126); return 0; }
-    /* Denormized number: have to output -126 but the reason
+    /* Denormalized number: have to output -126 but the reason
     is not clear to me yet */
 
     for (int i = 0; i <= 7; i++) {
