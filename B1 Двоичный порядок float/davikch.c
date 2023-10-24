@@ -4,7 +4,7 @@
 int main() {
     unsigned int a;
     int output = -127;
-	scanf("%f", &a);
+    scanf("%f", &a);
     /* Float doesn't allow bitwise operations
     Input is decoded like a float, but the raw bits are put 
     inside unsinged int variable */
@@ -18,6 +18,6 @@ int main() {
     for (int i = 0; i <= 7; i++) {
         if (a & 1 << 30 >> i) { output += pow(2, 7 - i); }
     }
-	printf("%d", output);
+    printf("%d", output);
     return 0;
 }
