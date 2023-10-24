@@ -12,6 +12,7 @@ To make youe contributing easy follow this esay steps:
 2. Install git and github app optionaly
 3. Make commit to the forked repository
 4. Make two cliks to create the merge request in github
+5. **You should name your pull request after the task name**
 
 # Русский перевод
 Решения задач из [контеста по основам алгоритмизации](ttps://imcs.dvfu.ru/cats/problems?cid=6830020;sid=HgnfFHcynBBiXP6rt25q7U1DSH1Hl6) от ИМКТ ДВФУ
@@ -27,3 +28,4 @@ To make youe contributing easy follow this esay steps:
 2. Установи на свой компютер гит и клиент гитхаба(опционально)
 3. Перидически отправляй коммиты на форк
 4. За 2 клика отправляй мердж реквесты на репозиторий
+5. **Назовите pull request так же, как называется задача**
