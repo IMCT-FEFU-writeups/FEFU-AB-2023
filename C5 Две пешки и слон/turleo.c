@@ -28,12 +28,14 @@ int main() {
     }
 
     for (int x = 0; x < 8; ++x) {
-        if (-x + k1_negative == x + k2_positive && (x != x1 && x != x2) && ((x + k2_positive) > 0) &&
+        if (-x + k1_negative == x + k2_positive &&
+                (x != x1 && x != x2) && ((x + k2_positive) > 0) &&
                 (x + k2_positive <= 8)) {
             fprintf(fout, "%d %d\n", x, -x + k1_negative);
             return 0;
         }
-        if (x + k1_positive == -x + k2_negative && (x != x1 && x != x2) && ((x + k1_positive) > 0) && 
+        if (x + k1_positive == -x + k2_negative &&
+                (x != x1 && x != x2) && ((x + k1_positive) > 0) &&
                 (x + k1_positive <= 8)) {
             fprintf(fout, "%d %d\n", x, x + k1_positive);
             return 0;
