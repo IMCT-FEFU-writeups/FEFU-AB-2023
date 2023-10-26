@@ -19,14 +19,16 @@ jobs:
           import os
           import subprocess
           import sys
+          imoprt re
 
           print("Python {}.{}.{}".format(*sys.version_info))  # Currently Python 3.11.2
+          r = re.compile('.*\\.c["\']?$')
           with open("git_diff.txt") as in_file:
             modified_files = sorted(in_file.read().splitlines())
           print("{} files were modified.".format(len(modified_files)))
 
           cpp_exts = tuple(".c .c++ .cc .cpp .cu .cuh .cxx .h .h++ .hh .hpp .hxx".split())
-          cpp_files = [file for file in modified_files if file.lower().endswith(cpp_exts)]
+          cpp_files = [file for file in modified_files if r.findall(file)]
           print(f"{len(cpp_files)} C++ files were modified.")
           if not cpp_files:
             sys.exit(0)
