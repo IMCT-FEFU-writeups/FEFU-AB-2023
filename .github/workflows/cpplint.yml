@@ -19,7 +19,7 @@ jobs:
           import os
           import subprocess
           import sys
-          imoprt re
+          import re
 
           print("Python {}.{}.{}".format(*sys.version_info))  # Currently Python 3.11.2
           r = re.compile('.*\\.c["\']?$')
