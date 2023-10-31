@@ -11,6 +11,7 @@ jobs:
       - shell: python  # Print the version of Python
         run: import sys ; print("Python {}.{}.{}".format(*sys.version_info))
       - run: python -m pip install cpplint
+      - run: git config core.quotePath false
       - run: git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
       - run: git diff HEAD^ HEAD --name-only > git_diff.txt
       - name: cpplint_modified_files
@@ -22,7 +23,6 @@ jobs:
           import re
 
           print("Python {}.{}.{}".format(*sys.version_info))  # Currently Python 3.11.2
-          r = re.compile('.*\\.c["\']?$')
           with open("git_diff.txt") as in_file:
             modified_files = sorted(in_file.read().splitlines())
           print("{} files were modified.".format(len(modified_files)))
@@ -34,5 +34,5 @@ jobs:
             sys.exit(0)
 
           print("cpplint:")
-          subprocess.run(["cpplint", "--filter=-legal/copyright"] + cpp_files, check=True, text=True)
+          subprocess.run(["cpplint"] + cpp_files, check=True, text=True)
 
