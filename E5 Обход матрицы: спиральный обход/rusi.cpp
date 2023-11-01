@@ -14,28 +14,28 @@ int main() {
         switch (s) {
             case 0:
                 x++;
-                if ( x == rx - 1) {
+                if (x == rx - 1) {
                     s = 1;
                     rx -= 1;
                 }
                 break;
             case 1:
                 y++;
-                if ( y == by - 1) {
+                if (y == by - 1) {
                     s = 2;
                     by -= 1;
                 }
                 break;
             case 2:
                 x--;
-                if ( x == lx) {
+                if (x == lx) {
                     s = 3;
                     lx += 1;
                 }
                 break;
             case 3:
                 y--;
-                if ( y == ty) {
+                if (y == ty) {
                     s = 0;
                     ty += 1;
                 }
