@@ -3,13 +3,39 @@
 
 using namespace std;
 
-void qsortRecursive(short *mass, int size);
+void qsortRecursive(short *mas, int size) {
+    int i = 0;
+    int j = size - 1;
+    int mid = mas[size / 2];
+    do {
+        while (mas[i] < mid) {
+            i++;
+        }
+        while (mas[j] > mid) {
+            j--;
+        }
+        if (i <= j) {
+            short tmp = mas[i];
+            mas[i] = mas[j];
+            mas[j] = tmp;
+
+            i++;
+            j--;
+        }
+    } while (i <= j);
+    if (j > 0) {
+        qsortRecursive(mas, j + 1);
+    }
+    if (i < size) {
+        qsortRecursive(&mas[i], size - i);
+    }
+}
 
 int main() {
     int n;
     int unicc = 0;
-    ifstream input("C:\\Users\\rufsi\\CLionProjects\\cats_D3\\input.txt");
-    ofstream output("C:\\Users\\rufsi\\CLionProjects\\cats_D3\\output.txt");
+    ifstream input("input.txt");
+    ofstream output("output.txt");
     input >> n;
     short a[n];
     for (int i = 0; i < n; i++) {
@@ -55,32 +81,4 @@ int main() {
         output << b[i][0] << " " << b[i][1] << endl;
     }
     return 0;
-}
-
-void qsortRecursive(short *mas, int size) {
-    int i = 0;
-    int j = size - 1;
-    int mid = mas[size / 2];
-    do {
-        while (mas[i] < mid) {
-            i++;
-        }
-        while (mas[j] > mid) {
-            j--;
-        }
-        if (i <= j) {
-            short tmp = mas[i];
-            mas[i] = mas[j];
-            mas[j] = tmp;
-
-            i++;
-            j--;
-        }
-    } while (i <= j);
-    if (j > 0) {
-        qsortRecursive(mas, j + 1);
-    }
-    if (i < size) {
-        qsortRecursive(&mas[i], size - i);
-    }
 }
