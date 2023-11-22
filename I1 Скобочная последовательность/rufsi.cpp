@@ -78,18 +78,18 @@ int main() {
     string buffer;
     cin >> buffer;
     int c = 0;
-    for (int i : buffer) {
+    for (int i: buffer) {
         if (i == 40 || i == 91 || i == 123) {
             queue.add(i);
-            c = (c < queue.length())? queue.length() : c;
+            c = (c < queue.length()) ? queue.length() : c;
         } else {
             if (i == 41) {
-                if (i != queue.get()+1) {
+                if (i != queue.get() + 1) {
                     cout << -1;
                     return 0;
                 }
             } else {
-                if (i != queue.get()+2) {
+                if (i != queue.get() + 2) {
                     cout << -1;
                     return 0;
                 }
