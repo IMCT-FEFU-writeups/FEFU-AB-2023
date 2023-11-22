@@ -12,8 +12,7 @@ void path(int x, int y, int a, int b, int c, int d) {
     if (x * n < y * m) {
         fprintf(output, "L");
         path(x, y, a, b, m, n);
-    }
-    else {
+    } else {
         fprintf(output, "R");
         path(x, y, m, n, c, d);
     }
