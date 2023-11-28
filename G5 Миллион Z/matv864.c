@@ -22,29 +22,24 @@
 
 const int MAX_END = 1000000;
 
-struct item
-{
+struct item {
     struct item *next;
     int let;
     int l;
     int r;
 };
 
-void print_queue(struct item *mainNode)
-{
+void print_queue(struct item *mainNode) {
     int c = 0;
     struct item *nowNode = mainNode;
-    while (1)
-    {
+    while (1) {
         c++;
         printf("%d %d %d %d\n", c, nowNode->l, nowNode->r, nowNode->let);
-        if (c > 50)
-        {
+        if (c > 50) {
             break;
         }
 
-        if (nowNode->r == MAX_END)
-        {
+        if (nowNode->r == MAX_END) {
             break;
         }
         nowNode = nowNode->next;
@@ -52,16 +47,12 @@ void print_queue(struct item *mainNode)
     printf("-----\n\n");
 }
 
-void put_interval(struct item *mainNode, struct item *addNode)
-{
+void put_interval(struct item *mainNode, struct item *addNode) {
 
     struct item *nowNode = mainNode;
-    while (1)
-    {
-
+    while (1) {
         // small interval above big interval
-        if (addNode->l > nowNode->l && addNode->r < nowNode->r)
-        {
+        if (addNode->l > nowNode->l && addNode->r < nowNode->r) {
             struct item *newNode = malloc(sizeof(struct item));
             struct item *insteadAddNode = malloc(sizeof(struct item));
             int old_r = nowNode->r, old_let = nowNode->let;
@@ -85,16 +76,14 @@ void put_interval(struct item *mainNode, struct item *addNode)
         }
 
         // big interval above small interval
-        if (addNode->l <= nowNode->l && addNode->r >= nowNode->r)
-        {
+        if (addNode->l <= nowNode->l && addNode->r >= nowNode->r) {
             nowNode->let = addNode->let;
 
             // printf("2\n");
         }
 
         // interval above left part interval
-        if (addNode->l <= nowNode->l && (addNode->r < nowNode->r && addNode->r >= nowNode->l))
-        {
+        if (addNode->l <= nowNode->l && (addNode->r < nowNode->r && addNode->r >= nowNode->l)) {
             struct item *node2 = malloc(sizeof(struct item));
             struct item *point = nowNode->next;
             int old_r = nowNode->r, old_let = nowNode->let;
@@ -114,8 +103,7 @@ void put_interval(struct item *mainNode, struct item *addNode)
         }
 
         // interval above right part interval
-        if ((addNode->l > nowNode->l && addNode->l <= nowNode->r) && addNode->r >= nowNode->r)
-        {
+        if ((addNode->l > nowNode->l && addNode->l <= nowNode->r) && addNode->r >= nowNode->r) {
             struct item *newNode = malloc(sizeof(struct item));
             int old_r = nowNode->r;
 
@@ -131,16 +119,14 @@ void put_interval(struct item *mainNode, struct item *addNode)
             // printf("4\n");
         }
 
-        if (nowNode->r == MAX_END)
-        {
+        if (nowNode->r == MAX_END) {
             break;
         }
         nowNode = nowNode->next;
     }
 }
 
-int main()
-{
+int main() {
     FILE *inp;
     FILE *out;
     inp = fopen("input.txt", "r");
@@ -155,8 +141,7 @@ int main()
     int n, let, l, r;
     fscanf(inp, "%d", &n);
 
-    while (n--)
-    {
+    while (n--) {
         fgets(trash, 100, inp);
         fscanf(inp, "%c %d %d", &char_let, &l, &r);
         let = char_let - 65;
@@ -167,23 +152,19 @@ int main()
     }
 
     int result_data[30], res = 0;
-    for (int i = 0; i < 30; i++)
-    {
+    for (int i = 0; i < 30; i++) {
         result_data[i] = 0;
     }
     struct item *nowNode = mainNode;
-    while (1)
-    {
+    while (1) {
         result_data[nowNode->let] = 1;
-        if (nowNode->r == MAX_END)
-        {
+        if (nowNode->r == MAX_END) {
             break;
         }
         nowNode = nowNode->next;
     }
 
-    for (int i = 0; i < 30; i++)
-    {
+    for (int i = 0; i < 30; i++) {
         res += result_data[i];
     }
 

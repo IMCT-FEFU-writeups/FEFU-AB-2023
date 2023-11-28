@@ -15,26 +15,25 @@
 #define max(a, b) ((a > b)?a:b)
 
 
-int main(){
+int main() {
     int n, t;
     int now_time = 0;
     int left_point = 0, right_point = 0;
     int record = 0;
     scanf("%d %d", &n, &t);
     int my_queue[n];
-    for (int ii = 0;ii < n;ii++){
+    for (int ii = 0; ii < n; ii++) {
         scanf("%d", &my_queue[ii]);
     }
-    while(right_point < n){
-
-        if (right_point - left_point == 0){
+    while (right_point < n) {
+        if (right_point - left_point == 0) {
             now_time = my_queue[right_point];
         }
 
-        if (my_queue[left_point] <= now_time){
+        if (my_queue[left_point] <= now_time) {
             now_time += t;
             left_point++;
-            while (my_queue[right_point] < now_time && right_point < n){
+            while (my_queue[right_point] < now_time && right_point < n) {
                 right_point++;
             }
         }
