@@ -10,4 +10,6 @@ int main(){
 		printf("Buzz");
 	}
 	printf("\n");
+
+	return 0;
 }
